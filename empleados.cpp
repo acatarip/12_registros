@@ -23,5 +23,20 @@ int main (){
 		cout<<"Salario: "; cin>>EMPLEADO[i].salario;	
 	}
 	
+	float MaxVenA=0; 
+	int pos=0;
+	for (int i=0; i<n; i++){
+		float VenA = 0;
+		for (int j=0; j<12; j++){
+			VenA = VenA + EMPLEADO[i].ventas[j];
+		}
+		if (VenA > MaxVenA){
+			MaxVenA = VenA;
+			pos=i;
+		}
+	}
+	cout<<"\n\tEl empleado con mayor venta anual\n";
+	cout<<"Numero: "<< EMPLEADO[pos].numero;
+	cout<<"\nNombre: "<< EMPLEADO[pos].nombre;
 	return 0;
 }
