@@ -16,7 +16,8 @@ int main (){
 	for (int i=0; i<n; i++){
 		cout<<"\tEmpleado "<<i+1<<endl;
 		cout<<"Numero: "; cin>> EMPLEADO[i].numero;
-		cout<<"Nombre: "; cin>> EMPLEADO[i].nombre;
+		cin.ignore();
+		cout<<"Nombre: "; getline(cin, EMPLEADO[i].nombre);
 		for (int j=0; j<12; j++){
 			cout<<"Ventas de "<<MES[j]<<": "; cin>>EMPLEADO[i].ventas[j];
 		}
