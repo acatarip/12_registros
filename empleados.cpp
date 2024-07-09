@@ -24,13 +24,15 @@ int main (){
 		cout<<"Salario: "; cin>>EMPLEADO[i].salario;	
 	}
 	
-	float MaxVenA=0; 
+	float MaxVenA=0, VAE[n];
+	//  VAE - Venta total anual de cada empleado 
 	int pos=0;
 	for (int i=0; i<n; i++){
 		float VenA = 0;
 		for (int j=0; j<12; j++){
 			VenA = VenA + EMPLEADO[i].ventas[j];
 		}
+		VAE[i]=VenA;  //se guarda venta total anual en un arreglo
 		if (VenA > MaxVenA){
 			MaxVenA = VenA;
 			pos=i;
@@ -39,5 +41,14 @@ int main (){
 	cout<<"\n\tEl empleado con mayor venta anual\n";
 	cout<<"Numero: "<< EMPLEADO[pos].numero;
 	cout<<"\nNombre: "<< EMPLEADO[pos].nombre;
+	
+	cout<<"\n\n\tEmpleados con sueldo aumentado\n";
+	for (int i=0; i<n; i++){
+		if (VAE[i] > 100){
+			EMPLEADO[i].salario = EMPLEADO[i].salario * 1.1;
+			cout<<"Numero: "<<i+1<<", Nombre: "<<EMPLEADO[i].nombre;
+			cout<<", Nuevo salario: "<<EMPLEADO[i].salario<<endl;
+		}
+	}
 	return 0;
 }
