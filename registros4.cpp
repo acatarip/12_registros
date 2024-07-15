@@ -22,6 +22,8 @@ int main(){
 	}
 	
 	string p;
+	int mmay=atleta[0].medallas, a=0;  
+	// mmay - maximo de medallas
 	cin.ignore();
 	cout<<"\nIngrese un pais: "; getline(cin, p);
 	cout<<"\n\tLista de atletas de "<<p<<":";
@@ -30,8 +32,19 @@ int main(){
 			cout<<"\nNombre: "<<atleta[j].nombre;
 			cout<<"\nPais: "<<atleta[j].pais;
 			cout<<"\nDisciplina: "<<atleta[j].disciplina;
-			cout<<"\nNumero de medallas: "<<atleta[j].medallas<<endl;
+			cout<<"\nNumero de medallas: "<<atleta[j].medallas<<endl;	
+			if(atleta[j].medallas > mmay){
+				mmay= atleta[j].medallas;
+				a=j;
+			}
 		}
+	}
+	if (a==0){
+		cout<<"\nNinguna coincidencia.";
+	}
+	else{
+		cout<<"\nEn "<<p<<" el atleta con mas medallas es "<<atleta[a].nombre;
+		cout<<"\nNumero de medallas: "<<atleta[a].medallas;
 	}
 	return 0;
 }
