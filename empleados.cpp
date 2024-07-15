@@ -43,12 +43,31 @@ int main (){
 	cout<<"\nNombre: "<< EMPLEADO[pos].nombre;
 	
 	cout<<"\n\n\tEmpleados con sueldo aumentado\n";
+	int cc=0;  //contador de empleados con nuevo salario
 	for (int i=0; i<n; i++){
 		if (VAE[i] > 100){
 			EMPLEADO[i].salario = EMPLEADO[i].salario * 1.1;
 			cout<<"Numero: "<<i+1<<", Nombre: "<<EMPLEADO[i].nombre;
 			cout<<", Nuevo salario: "<<EMPLEADO[i].salario<<endl;
+			cc++;
 		}
+	}
+	if (cc==0){
+		cout<<"Ningun empleado supero las 100 ventas.";
+	}
+	
+	cout<<"\n\tEmpleados con ventas menores a 30 en diciembre\n";
+	int dd=0;  //contador de empleados con ventas menores a 30 en diciembre
+	for (int m=0; m<n; m++){
+		if (EMPLEADO[m].ventas[11] < 30){
+			cout<<"Numero: "<<EMPLEADO[m].numero;
+			cout<<", Nombre: "<<EMPLEADO[m].nombre;
+			cout<<", Ventas en diciembre: "<<EMPLEADO[m].ventas[11];
+			dd++;
+		}
+	}
+	if (dd==0){
+		cout<<"Ningun empleado.";
 	}
 	return 0;
 }
