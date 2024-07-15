@@ -18,8 +18,20 @@ int main(){
 		cout<<"Nombre: "; getline(cin, atleta[i].nombre);
 		cout<<"Pais: "; getline(cin, atleta[i].pais);
 		cout<<"Disciplina: "; getline(cin, atleta[i].disciplina);
-		cout<<"Cantidad de medallas: "; cin>>atleta[i].medallas;
+		cout<<"Numero de medallas: "; cin>>atleta[i].medallas;
 	}
 	
+	string p;
+	cin.ignore();
+	cout<<"\nIngrese un pais: "; getline(cin, p);
+	cout<<"\n\tLista de atletas de "<<p<<":";
+	for(int j=0; j<n; j++){
+		if(p == atleta[j].pais){
+			cout<<"\nNombre: "<<atleta[j].nombre;
+			cout<<"\nPais: "<<atleta[j].pais;
+			cout<<"\nDisciplina: "<<atleta[j].disciplina;
+			cout<<"\nNumero de medallas: "<<atleta[j].medallas<<endl;
+		}
+	}
 	return 0;
 }
