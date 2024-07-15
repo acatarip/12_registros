@@ -47,7 +47,7 @@ int main (){
 	for (int i=0; i<n; i++){
 		if (VAE[i] > 100){
 			EMPLEADO[i].salario = EMPLEADO[i].salario * 1.1;
-			cout<<"Numero: "<<i+1<<", Nombre: "<<EMPLEADO[i].nombre;
+			cout<<"Numero: "<<EMPLEADO[i].numero<<", Nombre: "<<EMPLEADO[i].nombre;
 			cout<<", Nuevo salario: "<<EMPLEADO[i].salario<<endl;
 			cc++;
 		}
