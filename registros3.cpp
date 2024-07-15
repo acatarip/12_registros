@@ -20,5 +20,25 @@ int main (){
 		cout<<"Mes de nacimiento (numero): "; cin>>persona[i].mes;
 		cout<<"Anio de nacimiento: "; cin>>persona[i].anio;
 	}
+	
+	int m;
+	do{
+		int c=0;
+		cout<<"\nIngrese el numero de un mes: "; cin>>m;
+		cout<<"\tPersonas que cumplen anios el mes "<<m;
+		for(int j=0; j<n; j++){
+			if(m==persona[j].mes){
+				cout<<"\n\nNombre: "<<persona[j].nombre;
+				cout<<"\nDia de naciminto: "<<persona[j].dia;
+				cout<<"\nMes de nacimiento: "<<persona[j].mes;
+				cout<<"\nAnio de nacimiento: "<<persona[j].anio;
+				c++;
+			}
+		}
+		if(c==0){
+			cout<<"\nNinguna coincidencia.";
+		}
+	} while (m!=0 && m<=12);
+	
 	return 0;
 }
