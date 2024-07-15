@@ -39,5 +39,13 @@ int main(){
 	cout<<"\nCantidad de personas mayores de 50: "<<c;
 	cout<<"\nPromedio de edades: "<<prom;
 	
+	cout<<"\n-------------------------------";
+	cout<<"\n\tDatos registrados"<<endl;
+	for(int k=0; k<n; k++){
+		cout<<k+1<<".";
+		cout<<"\nNombre completo: "<<persona[k].nombre;
+		cout<<"\nDNI: "<<persona[k].DNI;
+		cout<<"\nEdad: "<<persona[k].edad<<endl;
+	}
 	return 0;
 }
