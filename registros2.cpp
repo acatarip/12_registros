@@ -25,6 +25,19 @@ int main(){
 		} while (L!=8);
 		cout<<"Ingrese edad: "; cin>>persona[i].edad;
 	}
+	int c;
+	float SE, prom;
+	// c - contador de personas mayores de 50 años
+	// SE - sumatoria de edades
+	for(int j=0; j<n; j++){
+		if(persona[j].edad > 50){
+			c++;
+		}
+		SE+=persona[j].edad;
+	}
+	prom=SE/n;
+	cout<<"\nCantidad de personas mayores de 50: "<<c;
+	cout<<"\nPromedio de edades: "<<prom;
 	
 	return 0;
 }
